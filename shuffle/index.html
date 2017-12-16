@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shuffle Array</title>
+</head>
+<body>	
+	<div id="output"></div><br>
+	<input type="button" name="btn" id="btn" value="Shuffle" onclick="start()"><br>
+
+<script type="text/javascript">
+	var output = document.getElementById("output");
+	var secretWord = ["JavaScript", "HTML", "CSS", "Website", "Ruby"];
+
+	function start() {
+		shuffleWord(secretWord);
+		output.innerHTML += secretWord + "<br>";
+	}
+
+	function shuffleWord(arr) {
+		for(var x = arr.length-1; x > 0; x--) {
+			var holder = Math.floor(Math.random() * (x+1));
+			var temp = arr[x];
+			arr[x] = arr[holder];
+			arr[holder] = temp
+		}
+		return arr;
+	}
+</script>
+</body>
+</html>
